@@ -2,15 +2,28 @@ package br.com.lojavirtual.models;
 
 import java.math.BigDecimal;
 
-public class Livro {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 
-	private String descricao;
+@Entity
+public class Livro {
+	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	
+	private String titulo;
+	
+	@Lob
+	private String descricao;	
 	
 	private BigDecimal preco;
 	
 	private Integer numeroPaginas;
 	
-	private String titulo;
+
 	
 	
 
