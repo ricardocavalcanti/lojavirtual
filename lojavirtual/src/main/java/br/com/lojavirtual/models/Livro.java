@@ -23,7 +23,7 @@ public class Livro {
 	
 	private Integer numeroPaginas;
 	
-
+    private List<Autor> autores = new ArrayList<>();
 	
 	
 
