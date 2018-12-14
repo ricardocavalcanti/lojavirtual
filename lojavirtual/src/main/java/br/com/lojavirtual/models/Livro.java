@@ -1,12 +1,17 @@
 package br.com.lojavirtual.models;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+
+
 
 @Entity
 public class Livro {
@@ -23,8 +28,8 @@ public class Livro {
 	
 	private Integer numeroPaginas;
 	
-    private List<Autor> autores = new ArrayList<>();
-	
+	@ManyToMany
+    private List<Autor> autores = new ArrayList<>();	
 	
 
 	public String getTitulo() {
@@ -57,14 +62,25 @@ public class Livro {
 
 	public void setNumeroPaginas(Integer numeroPaginas) {
 		this.numeroPaginas = numeroPaginas;
+	}	
+    
+	public List<Autor> getAutores() {
+		return autores;
+	}
+
+	 void setAutores(List<Autor> autores) {
+		this.autores = autores;
 	}
 
 	@Override
 	public String toString() {
-		return "Livro [descricao=" + descricao + ", preco=" + preco + ", numeroPaginas=" + numeroPaginas + ", titulo="
-				+ titulo + "]";
+		return "Livro [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", preco=" + preco
+				+ ", numeroPaginas=" + numeroPaginas + ", autores=" + autores + "]";
 	}
 
+	
+
+	
 	
 	
 }

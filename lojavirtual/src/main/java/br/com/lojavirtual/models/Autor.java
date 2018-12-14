@@ -1,15 +1,24 @@
 package br.com.lojavirtual.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Autor {
 	
+	public Autor() {}
+	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String nome;
 	
 	
-	public Autor(Integer id, String nome) {
+	public Autor(Integer id) {
 		this.id = id;
-		this.nome = nome;
+		
 				
 	}
 
