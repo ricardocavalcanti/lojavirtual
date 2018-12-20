@@ -32,7 +32,7 @@ public class AdminLivrosBeans {
 	
 
 	@Transactional
-	public void salvar() {
+	public String salvar() {
 		
 		for (Integer autorId : autoresId) {
 			
@@ -42,8 +42,8 @@ public class AdminLivrosBeans {
 		dao.salvar(livro);
 		System.out.println("Livro cadastrado: "+livro);	
 		
-		this.livro = new Livro();
-		this.autoresId = new ArrayList<>();
+		
+		return "/livros/lista?faces-redirect=true";
 	}
 
 	public List<Autor> getAutores(){
