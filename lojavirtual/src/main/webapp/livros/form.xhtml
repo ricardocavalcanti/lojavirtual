@@ -40,6 +40,14 @@
         <h:message for="autores"/>        
      </div>
      
+      <div>
+       <h:outputLabel value="Data de publicação" />
+       <h:inputText value="#{adminLivrosBean.livro.dataPublicacao.time}" required="true" id="dataPublicacao">    
+        <f:convertDateTime pattern="dd/MM/yyyy"/>
+       </h:inputText>
+       <h:message for="dataPublicacao"/> 
+     </div>
+     
      
      <h:commandButton value="Cadastrar" outcome="Cadastrar" action="#{adminLivrosBean.salvar}" />
      
