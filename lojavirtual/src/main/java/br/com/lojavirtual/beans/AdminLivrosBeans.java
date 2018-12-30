@@ -40,6 +40,7 @@ public class AdminLivrosBeans {
 			livro.getAutores().add(new Autor(autorId));
 			
 		}
+		
 		dao.salvar(livro);		
 		
 		context.getExternalContext().getFlash().setKeepMessages(true);			
