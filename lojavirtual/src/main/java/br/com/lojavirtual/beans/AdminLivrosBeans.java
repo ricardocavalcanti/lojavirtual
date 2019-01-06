@@ -20,7 +20,8 @@ import br.com.lojavirtual.models.Livro;
 @RequestScoped
 public class AdminLivrosBeans {
 	
-	private Livro livro = new Livro();
+	private Livro livro = new Livro();	
+	
 	
 	//Context and dependency injection
 	@Inject
@@ -28,20 +29,14 @@ public class AdminLivrosBeans {
 	@Inject
 	private AutorDao autorDao;
 	@Inject
-	private FacesContext context;
-	
-	private List<Integer> autoresId = new ArrayList<>();	
+	private FacesContext context;	
+		
 
 	@Transactional
-	public String salvar() {
+	public String salvar() {		
+	
 		
-		for (Integer autorId : autoresId) {
-			
-			livro.getAutores().add(new Autor(autorId));
-			
-		}
-		
-		dao.salvar(livro);		
+	    dao.salvar(livro);		
 		
 		context.getExternalContext().getFlash().setKeepMessages(true);			
 		context.addMessage(null, new FacesMessage("Livro casdastrado com sucesso!"));
@@ -65,12 +60,5 @@ public class AdminLivrosBeans {
 	}
 	
 	
-	public List<Integer> getAutoresId() {
-		return autoresId;
-	}
-
-	public void setAutoresId(List<Integer> autoresId) {
-		this.autoresId = autoresId;
-	}
-
+	
 }
