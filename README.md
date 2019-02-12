@@ -1,2 +1,2 @@
 # lojavirtual
-Loja Virtual com CDI+JSF+JPA
+Projeto LojaVirtual CDI+JSF+JPA
